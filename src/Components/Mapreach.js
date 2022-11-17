@@ -49,32 +49,38 @@ const handleOffice = () => {
 
   return (
     <div>
+      <div className='map-sec1'>
       <div id='mapreacg-sec'>
-        <div className='container'>
+        <div className='container mappatten'>
           <div className='mapshadow'>
+          
           <h3 className='mob-maptitle'>Everything Within Reach</h3>
             <div className='reach-map'>
                 <div className='reach-left'>
-                    <div id="map-container-google-1" className="z-depth-1-half map-container reach-map">
+                    <div id="map-container-google-1" className="z-depth-1-half map-container">
                       
                     {
   school&&
+  <>
   
   <iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.6830343653137!2d75.84468151419425!3d22.702840485115917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fdac89a09a53%3A0xa696c98e33dcd89f!2sLalbagh%20Garden!5e0!3m2!1sen!2sin!4v1663658939960!5m2!1sen!2sin' className='reach-ifram' allowFullScreen></iframe>
-  
+  </>
         }
 
 {
 market&&
-
+<>
+  
 <iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.2632111774838!2d75.85252801419459!3d22.718456185107883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd0a3c2422a1%3A0xb8cf3a1b62708158!2sRajwada%20Palace!5e0!3m2!1sen!2sin!4v1663658643653!5m2!1sen!2sin' className='reach-ifram' allowFullScreen></iframe>
-
+</>
 }
 
 {
 connectivity&&
+<>
+ 
 <iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.229878587793!2d75.85733281419468!3d22.719695585107218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd0c74fc979b%3A0xe7b8b3b6f2fd64e!2sBoliya%20Sarkar%20Ki%20Chhatri!5e0!3m2!1sen!2sin!4v1663658803030!5m2!1sen!2sin' className='reach-ifram' allowFullScreen></iframe>
-
+</>
 }
 
 {
@@ -90,6 +96,7 @@ office&&
                     </div>
                 </div>
                 <div className='reach-right'>
+                  <h4> Location</h4>
                   <h3 >Everything Within Reach</h3>
                   <div
                   defaultactivekey="School"
@@ -145,6 +152,7 @@ office&&
             </div>
         </div>
       </div>
+    </div>
     </div>
   )
 }

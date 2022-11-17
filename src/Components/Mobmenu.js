@@ -63,7 +63,7 @@ window.scrollTo({
                 <li><a className="menu__item" href="#AmenitiesDetails" smooth="true" offset={-70} duration={500}>Amenities</a></li>
                 <li><a className="menu__item" href="#Specifications" smooth="true" offset={-70} duration={500}>Specifications</a></li> 
                 <li><a className="menu__item" href="#Payment-sec" smooth="true" offset={-70} duration={500}>Payment Plans</a></li>               
-                {/* <li><a className="menu__item" href="#timeline" smooth="true" offset={-70} duration={500}>Construction Status</a></li>                               */}
+                <li><a className="menu__item" href="#connect" smooth="true" offset={-70} duration={500}>Get In Touch</a></li>                               */}
               </ul>
             </div>
           </div>

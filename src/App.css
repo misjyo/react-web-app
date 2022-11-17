@@ -1,9 +1,7 @@
 .App {
   text-align: center;
 }
-div {
-    width: 100%;
-}
+
 .header {
   margin: 0px auto;
   background: #ffffff;
@@ -81,6 +79,10 @@ ul.tabs-links {
     height: 75vh;
 }
 
+section#Specifications.mobiles-lists {
+    display: none;
+}
+
 .home-top-banner {
   /*background: url(./banner.jpg);*/
   background-size: cover;
@@ -90,15 +92,67 @@ ul.tabs-links {
   padding: 10px 0px 50px 0px;
 }
 
+.reach-right h4 {
+    text-align: left;
+    position: relative;
+}
+
+#building .swiper-button-prev:after, #building .swiper-button-next:after {
+    font-size: 25px;
+    color: #fff;
+}
+#building .swiper-button-prev, #building .swiper-button-next {
+    background-color: #1d4b37;
+    border-radius: 32px;
+    width: 50px;
+    height: 50px;
+    top: 90%;
+    font-size: 20px;
+}
+
 .home-top-banner {
     position: absolute;
     z-index: 0;
     top: 0px;
     width: 100%;
     height:75vh;
-    /* background: #ffffff40; */
-    background-image: linear-gradient(to bottom right, #e6c3749c, #297170de);
+    /* background: #ffffff40;
+    background-image: linear-gradient(to bottom right, #e6c3749c, #297170de); */
 }
+.left-logos img {
+    width: 155px
+}
+.footer-rights ul i {
+    font-size: 30px;
+    color: #fff;
+    margin-left: 20px;
+}
+.footer-rights ul {
+    list-style: none;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}.footer-copyrights {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer-rights ul i {
+    font-size: 30px;
+    color: #25D366;
+    margin-left: 20px;
+}.footer-rights ul i.fa.fa-phone {
+    color: #fff;
+    font-size: 25px;
+}
+.footer-rights ul i.fa.fa-phone {
+    transform: rotate(90deg);
+}
+.number-colm h4 {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
 
 .top-logo {
   margin-bottom: 200px;
@@ -147,7 +201,14 @@ h3{
   font-weight: 700;
   font-family: 'Playfair Display', serif;
 }
-
+h5 {
+    font-size: 23px;
+    line-height: 36px;
+    color: #1d1d1d;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 0px;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -175,7 +236,7 @@ h4{
   font-size: 16px;
   letter-spacing: 11px;
   line-height: 26px;
-  color: #155c37;
+  color: #00a04b;
   font-weight: 600;
   font-family: "Red Hat Display";
   text-align: center;
@@ -225,8 +286,7 @@ h4{
 
 .qty-main .bg-numbers {
   width: 63%;
-  background: #000;
-  background: url(../src/Components/images/over-view.jpg);
+  /* background: url(../src/Components/images/over-view.jpg); */
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
@@ -248,17 +308,43 @@ h4{
 }
 #floorplan img {
     width: 100%;
+    display: none;
 }
 
 .number-wrappers {
   background: #ffffffbf;
-  width: 40%;
+  width: 100%;
   margin-left: 48px;
   margin-top: 20px;
   margin-bottom: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+.number-colm:nth-child(1), .number-colm:nth-child(3) {
+    border-right: 1px solid #155c37;
+}
+.number-colm:nth-child(1), .number-colm:nth-child(2) {
+    border-bottom: 1px solid #155c37;
+    margin: 0 auto;
+}
+
+.number-colm h4 {
+    max-width: 80%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.number-wrappers .number-colm {
+    width: 45%;
+    float: left;
+    min-height: 180px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .number-colm p {
   font-size: 16px;
   line-height: 26px;
@@ -268,6 +354,11 @@ h4{
   margin-bottom: 0;
   margin-top: 0px;
 }
+
+section#AmenitiesDetails {
+    display: none;
+}
+
 .number-colm {
   padding: 19px 0;
   margin-left: 20px;
@@ -425,7 +516,7 @@ section#building h4 {
 section#plan-details {
     text-align: center;
     padding-top:0px;
-    padding-bottom:0px;
+    padding-bottom:60px;
 }
 video.videoTag {
     object-fit: cover !important;
@@ -445,7 +536,7 @@ section#plan-details li.nav-item button {
     border: none !important;
 }
 section#plan-details .nav-link.active {
-    background: #e7e7e7 !important;
+    background: #ebf3f1 !important;
 }
 section#plan-details .nav-tabs {
     justify-content: center;
@@ -641,6 +732,23 @@ input:focus {
     justify-content: center;
 }
 
+/* flor plan start */
+.tab-slider .carousel-control-prev-icon {   
+    background-color: #1d4b37;
+    border-radius: 32px;
+}
+.tab-slider .carousel-control-next-icon { 
+    background-color: #1d4b37;
+    border-radius: 32px;
+}
+.tab-slider .carousel-control-prev {
+    left: -78px;
+}
+.tab-slider .carousel-control-next {
+    right: -85px;
+}
+
+/* flor plan end */
 
 /***********************  Responsive css  **********************/ 
 
@@ -754,12 +862,19 @@ input:focus {
         font-size: 12px;
     }   
     section#plan-details {
-        padding-bottom: 0px;
+        padding-bottom: 40px;
     }
 }
 
 
 @media (max-width:767px) {
+    section#Specifications.mobiles-lists {
+        display: block;
+    }
+    section#Specifications.desktop-lists{
+        display: none;
+
+    }
     .reach-map {
         grid-gap: 15px;
     }
@@ -807,6 +922,9 @@ input:focus {
     .logo-wrapper .right-logos {
         margin-right: 20px;
     }
+    .left-logos img {
+        width: 145px;
+    }
     .logo-wrapper .left-logos {
         margin-left: 20px;
     }
@@ -837,6 +955,22 @@ input:focus {
     .connect-right {
         width: 55%;
         margin-left: 50px;
+    }
+
+    #building .swiper-button-prev, 
+    #building .swiper-button-next {
+        top:50%;
+        width: 30px;
+    height: 30px;
+    }
+    #building .swiper-button-prev:after,
+    #building .swiper-button-next:after {
+        font-size: 15px;
+    }
+
+    .tab-slider .carousel-control-next-icon,
+    .tab-slider .carousel-control-prev-icon{
+        background-size: 70%;
     }
     ul.chkbx {
         align-items: baseline;
@@ -932,7 +1066,12 @@ input:focus {
     section#building {
         padding-bottom: 15px !important;
     }
-  
+    .tab-slider .carousel-control-prev {
+        left:0px;
+    }
+    .tab-slider .carousel-control-next {
+        right: 0px;
+    }
 }
 
 

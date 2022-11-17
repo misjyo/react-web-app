@@ -155,6 +155,11 @@ body#Topmob-sec {
     #Topmob-sec .btn-rt .get-btn {
         font-size: 12px;
     }
+    #Topmob-sec .btn-rt .get-btn {
+      font-size: 12px;
+      display: none;
+  }
+    .menu__box{width: 100%;}
     #menuToggle {
         top: 20px;
     }

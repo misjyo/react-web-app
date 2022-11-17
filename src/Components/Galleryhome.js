@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import './Galleryhome.css';
 import Masony from "react-masonry-component";
 import Carousel from 'react-bootstrap/Carousel';
 import { initial, slice } from 'lodash'
+import ReactPlayer from "react-player";
+import Galleryvideo from "./Galleryvideo";
+import Video from "./Video";
 
 // Masory Options
 const masonryOptions = {
   fitWidth: false,
-  columnWidth:350,
-  gutter:10,
+  columnWidth: 350,
+  gutter: 10,
   itemSelector: ".photo-item"
 };
 
@@ -17,6 +20,7 @@ export default function App() {
   const [isFinished, setIsFinished] = useState(false)
   const [index, setIndex] = useState(6)
   const initialUsers = slice(imagesData, 0, index)
+  
 
   const [imageModal, setImageModal] = React.useState({
     showModal: false,
@@ -32,17 +36,16 @@ export default function App() {
   }, []);
 
   const getData = () => {
-   fetch('https://controlf5.co.in/client-demo/sanctorum-wordpress/wp-json/wp/v2/gallery_slider/')
+    fetch('https://controlf5.co.in/client-demo/sanctorum-wordpress/wp-json/wp/v2/gallery_slider/')
       .then((response) => response.json())
       .then((res) => {
         setImagesData([...imagesData, ...res]);
-
       })
-      .catch((err) => {});
+      .catch((err) => { });
   };
 
   const showMore = () => {
-    setIndex(index+2)
+    setIndex(index + 2)
     //console.log(index)
     if (index >= imagesData.length) {
       setIsFinished(true)
@@ -58,7 +61,7 @@ export default function App() {
   };
 
   const refresh = () => {
-  //  console.log("refresh.....");
+    //  console.log("refresh.....");
   };
 
   const onSet = (type) => {
@@ -89,28 +92,37 @@ export default function App() {
     }
   };
 
-//console.log(imagesData);
-const [glyttl, setGlyttl] = useState([]);
-  
-useEffect(() => {
-                async function gallerycon(){
-               const gallerycondata = await fetch('https://controlf5.co.in/client-demo/sanctorum-wordpress/wp-json/wp/v2/pages/33');
-               const gallerycondatas = await gallerycondata.json();
-               setGlyttl(gallerycondatas.acf);
-           }
-           gallerycon();
-        
-},[])
+  //console.log(imagesData);
+  const [glyttl, setGlyttl] = useState([]);
 
+  useEffect(() => {
+    async function gallerycon() {
+      const gallerycondata = await fetch('https://controlf5.co.in/client-demo/sanctorum-wordpress/wp-json/wp/v2/pages/33');
+      const gallerycondatas = await gallerycondata.json();
+      setGlyttl(gallerycondatas.acf);
+    }
+    gallerycon();
+
+  }, [])
+
+  // let videoRef = useRef();
+  // const [isPlaying, setIsPlaying] = useState(false);
+
+  // const playVideo = () => {
+
+  //   setIsPlaying(!isPlaying);
+
+
+  // }
 
   return (
     <>
-    <section id='gallery'>
-      <div className='container'>
-      <h4> {glyttl.gallery_title}</h4>
-        <h3>{glyttl.gallery_subtitle}</h3>
+      <section id='gallery'>
+        <div className='container'>
+          <h4> {glyttl.gallery_title}</h4>
+          <h3>{glyttl.gallery_subtitle}</h3>
           <div className='galley-main'>
-            <div className='conatiner'>            
+            <div className='conatiner'>
               <div className='desktop-gallery'>
                 <div datalength={imagesData.length}
                   hasmore="true"
@@ -139,64 +151,83 @@ useEffect(() => {
                     {imagesData &&
                       initialUsers.map((photo, index) => (
                         <li className={`photo-item`} key={index}>
-                          <img
-                            src={photo.acf.image}
-                            alt=""
-                            onClick={() => {
-                              setImageModal({
-                                showModal: true,
-                                modalSrc: photo.acf.image,
-                                imageIndex: index,
-                                currentSectionLength: imagesData.length
-                              });
-                            }}
-                          />
+                          <div>
+
+                            <img
+                              src={photo.acf.image}
+                              alt=""
+                              onClick={() => {
+                                setImageModal({
+                                  showModal: true,
+                                  modalSrc: photo.acf.image,
+                                  imageIndex: index,
+                                  currentSectionLength: imagesData.length
+                                });
+                              }}
+                            
+                            />
+
+
+                            {/* <ReactPlayer className ={'photo-item2'}
+
+                              ref={videoRef}
+                              url={photo.acf.video_gallery}
+                              width="100%"
+                              pip={true}
+                              controls={true}
+                              playing={isPlaying}
+                              
+
+                            /> */}
+
+                          </div>
+
                         </li>
-                        
+
                       ))}
                   </Masony>
                 </div>
-              {
+                {
 
-              isFinished ? (
-                <button
-                  onClick={showMore}
-                  type="button"
-                  className="disabled showbtn"
-                >
-                  Viewed less
-                </button>
-              ) : (
-                <button onClick={showMore} type="button" className="showbtn">
-                  Load more
-                </button>
-              )}
+                  isFinished ? (
+                    <button
+                      onClick={showMore}
+                      type="button"
+                      className="disabled showbtn"
+                    >
+                      Viewed less
+                    </button>
+                  ) : (
+                    <button onClick={showMore} type="button" className="showbtn">
+                      Load more
+                    </button>
+                  )}
 
-                
 
-              </div> 
 
-               <div className='mob-gallery'>
-               <Carousel>
-          {imagesData &&
-                      imagesData.map((photo, index) => (
-          <Carousel.Item interval={1000} key={index}>
-            <img
-              className='d-block w-100'
-              src={photo.acf.image}
-              alt="First slide"
-            />
-            
-          </Carousel.Item>
-          ))}
+              </div>
 
-        </Carousel>
-          </div>    
-             </div> 
-          
+              <div className='mob-gallery'>
+                <Carousel>
+                  {imagesData &&
+                    imagesData.map((photo, index) => (
+                      <Carousel.Item interval={1000} key={index}>
+                        <img
+                          className='d-block w-100'
+                          src={photo.acf.image}
+                          alt="First slide"
+                        />
+
+                      </Carousel.Item>
+                    ))}
+
+                </Carousel>
+              </div>
+            </div>
+
           </div>
-       </div>
-    </section>
+        </div>
+      </section>
 
       <div
         id='myModal'
@@ -237,6 +268,9 @@ useEffect(() => {
           <div />
         </div>
       </div>
+      <Galleryvideo />
+
+      {/* <Video/> */}
     </>
   );
 }

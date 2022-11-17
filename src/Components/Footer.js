@@ -8,7 +8,7 @@ export const Footer = () => {
   useEffect(() => {
     async function Footercontents(){
 
-        const footerdatas = await fetch('https://controlf5.co.in/client-demo/react-wordpress/wp-json/wp/v2/pages/33');
+        const footerdatas = await fetch('https://controlf5.co.in/client-demo/sanctorum-wordpress/wp-json/wp/v2/pages/33');
         const footerdetails = await footerdatas.json();
         setFooterdata(footerdetails.acf);
         //console.log(footerdetails.acf);
@@ -80,14 +80,21 @@ export const Footer = () => {
 
 
           <div className='footer-copyrights'> 
-          <p>{footerdata.copyright_text}</p>
 
-
-
+          <div className='footer-copyrights-inner'> 
+                <p>{footerdata.copyright_text}</p>
           </div>
+          <div className='footer-rights'> 
+                <ul>
+                  <li><a href="https://api.whatsapp.com/send?phone=917895461239&text=Hello,%20"><i class="fab fa-whatsapp"></i></a></li>
+                  <li><a href="tel:+917895461239"><i class="fa fa-phone"></i></a></li>
+                  
+                </ul>
+          </div>
+          
 
   </div>
-
+  </div>
 
     
     </div>
